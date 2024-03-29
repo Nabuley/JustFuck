@@ -1,3 +1,6 @@
+function range(size, start = 0){
+    return Array.from({length : size}, (_, index) => index + start);
+}
 class __JustFuck__{
     constructor(num = 0){
         this.num = num;
@@ -37,7 +40,7 @@ class __JustFuck__{
                     exCode = exCode + "res = res + String.fromCharCode(var_list[value_pointer]);";
                     break;
                 case "[":
-                    exCode = exCode + "for(let i = 0; i <= var_list[value_pointer]; ++i){";
+                    exCode = exCode + "for(let i in range(var_list[value_pointer])){";
                     break;
                 case "]":
                     exCode = exCode + "};";
